@@ -1,0 +1,7 @@
+{
+  "name": "KCMS - Karnataka College of Management & Science",
+  "description": "A world-class educational portal for KCMS featuring a professional design, mega menu, and seamless user experience.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
