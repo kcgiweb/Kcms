@@ -16,10 +16,10 @@ const AboutUs: React.FC = () => {
   ];
 
   const affiliations = [
-    { name: 'UGC', url: 'https://upload.wikimedia.org/wikipedia/en/9/91/University_Grants_Commission_India_logo.png' },
-    { name: 'NAAC', url: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/07/NAAC_Logo.png/220px-NAAC_Logo.png' },
-    { name: 'University of Mysore', url: 'https://upload.wikimedia.org/wikipedia/en/f/f6/University_of_Mysore_logo.png' },
-    { name: 'AIU', url: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Association_of_Indian_Universities_logo.png/220px-Association_of_Indian_Universities_logo.png' }
+    { name: 'UGC', url: 'https://www.ugc.gov.in/img/logo.png' },
+    { name: 'NAAC', url: 'https://assessmentonline.naac.gov.in/public/naac_logo.png' },
+    { name: 'University of Mysore', url: 'https://uni-mysore.ac.in/sites/default/files/uom_logo.png' },
+    { name: 'AIU', url: 'https://www.aiu.ac.in/images/logo.png' }
   ];
 
   const faqs = [
@@ -58,7 +58,7 @@ const AboutUs: React.FC = () => {
       />
       {/* 1. Hero Banner */}
       <section className="relative h-[400px] flex items-center bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-[url('https://res.cloudinary.com/dejcpd56d/image/upload/v1767690141/download_8_f7gppy.png')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 opacity-20 bg-[url('/assets/images/SLA_9058_y5xdri.jpg')] bg-cover bg-center"></div>
         <div className="container mx-auto px-6 relative z-10 animate-fade-up">
           <nav className="flex items-center gap-2 text-white/50 text-xs mb-6 uppercase font-black tracking-widest">
             <Link to="/" className="hover:text-secondary">Home</Link> 
@@ -83,7 +83,7 @@ const AboutUs: React.FC = () => {
           </div>
           <div className="relative">
             <div className="absolute -top-10 -left-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl -z-1"></div>
-            <img src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767690324/download_12_pvx4jx.png" alt="Campus Life" className="rounded-[3rem] shadow-2xl w-full" />
+            <img src="/assets/images/Karnataka College of Management & Science.png" alt="Campus Life" className="rounded-[3rem] shadow-2xl w-full" />
             <div className="absolute -bottom-8 -right-8 bg-primary p-10 rounded-[2.5rem] text-white shadow-xl hidden md:block">
               <div className="text-4xl font-black mb-1">15+</div>
               <div className="text-xs uppercase font-bold opacity-60">Years of Growth</div>
@@ -100,7 +100,7 @@ const AboutUs: React.FC = () => {
               <div className="relative group">
                 <div className="absolute inset-0 bg-primary rounded-[3rem] rotate-3 group-hover:rotate-6 transition-transform"></div>
                 <img 
-                  src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767687458/download_1_hopo91.png" 
+                  src="/assets/images/Chairman_dml3ot.png" 
                   alt="Prof. Basavaraj Ramanal" 
                   className="relative z-10 rounded-[3rem] w-full shadow-2xl transition-all duration-700"
                 />

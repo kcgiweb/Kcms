@@ -49,7 +49,7 @@ const HistoryMilestones: React.FC = () => {
     <div className="pt-24 min-h-screen bg-white">
       {/* Hero Section */}
       <section className="bg-primary text-white py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div className="absolute inset-0 opacity-10 bg-[url('/assets/images/SLA_9136_xpa05s.jpg')] bg-cover bg-center"></div>
         <div className="container mx-auto px-6 relative z-10 animate-fade-up">
           <nav className="flex items-center gap-2 text-white/50 text-xs mb-8 uppercase font-black tracking-widest">
             <Link to="/" className="hover:text-secondary">Home</Link> 
@@ -70,7 +70,7 @@ const HistoryMilestones: React.FC = () => {
             <div className="relative group">
                <div className="absolute inset-0 bg-primary/10 rounded-[4rem] group-hover:rotate-2 transition-transform"></div>
                <img 
-                src="https://images.unsplash.com/photo-1525921429624-479b6c294a48?auto=format&fit=crop&q=80" 
+                src="/assets/images/Karnataka College of Education.webp" 
                 alt="Founding Principles" 
                 className="rounded-[4rem] shadow-2xl relative z-10 w-full"
                />

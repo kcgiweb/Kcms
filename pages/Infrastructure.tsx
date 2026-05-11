@@ -15,63 +15,63 @@ const Infrastructure: React.FC = () => {
       slug: 'library', 
       icon: <Library />, 
       desc: 'Fully automated knowledge hub with 50,000+ volumes and digital journals.', 
-      img: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767689980/download_4_gfxni9.png' 
+      img: '/assets/images/Central Library.webp' 
     },
     { 
       title: 'Computer Labs', 
       slug: 'computer-labs', 
       icon: <Monitor />, 
       desc: 'High-performance computing center with industry-standard software and gigabit connectivity.', 
-      img: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767690271/download_11_mu2xxp.png' 
+      img: '/assets/images/download_9_kbciqq_dc4kll.png' 
     },
     { 
       title: 'Science & Tech Labs', 
       slug: 'science-labs', 
       icon: <Microscope />, 
       desc: 'Advanced research environment for hands-on experimental learning and innovation.', 
-      img: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767690161/download_9_kbciqq.png' 
+      img: '/assets/images/Advanced Laboratories.png' 
     },
     { 
       title: 'Smart Classrooms', 
       slug: 'smart-classrooms', 
       icon: <GraduationCap />, 
       desc: 'Digitally enabled lecture halls with interactive 4K smart boards and optimized acoustics.', 
-      img: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767690141/download_8_f7gppy.png' 
+      img: '/assets/images/download_8_f7gppy_woi5xe.png' 
     },
     { 
       title: 'Hostel Facility', 
       slug: 'hostel', 
       icon: <Building2 />, 
       desc: 'Safe, secure, and comfortable residential blocks for boys and girls.', 
-      img: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767693347/download_13_pobgl1.png' 
+      img: '/assets/images/Separate Hostels.png' 
     },
     { 
       title: 'Transport System', 
       slug: 'transport', 
       icon: <Bus />, 
       desc: 'Fleet of GPS-tracked buses connecting major residential areas to the campus.', 
-      img: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767690082/download_6_ealo4h.png' 
+      img: '/assets/images/Transportation.jpeg' 
     },
     { 
       title: 'Auditorium', 
       slug: 'auditorium', 
       icon: <Music />, 
       desc: 'Modern multi-purpose hall for cultural events, seminars, and academic fests.', 
-      img: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767690014/download_5_v1xovv.png' 
+      img: '/assets/images/download_5_v1xovv_l6ye3g.png' 
     },
     { 
       title: 'Administrative Block', 
       slug: 'admin', 
       icon: <Stethoscope />, 
       desc: 'Centralized administrative hub for student services and campus governance.', 
-      img: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767690216/download_10_vssrg5.png' 
+      img: '/assets/images/SLA_9006_itrogh.jpg' 
     },
     { 
       title: 'Sports & Cultural Hub', 
       slug: 'gym', 
       icon: <Dumbbell />, 
       desc: 'Comprehensive facilities for athletic training and holistic student development.', 
-      img: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767690221/download_10_yezsn9.png' 
+      img: '/assets/images/Sports & Fitness.webp' 
     },
   ];
 
@@ -130,8 +130,8 @@ const Infrastructure: React.FC = () => {
           </div>
           <div className="lg:w-1/2 relative z-10">
              <div className="grid grid-cols-2 gap-4">
-               <img src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767690271/download_11_mu2xxp.png" className="rounded-3xl shadow-lg aspect-square object-cover" alt="Tech Hub" />
-               <img src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767690161/download_9_kbciqq.png" className="rounded-3xl shadow-lg translate-y-8 aspect-square object-cover" alt="Computing Lab" />
+               <img src="/assets/images/download_9_kbciqq_dc4kll.png" className="rounded-3xl shadow-lg aspect-square object-cover" alt="Tech Hub" />
+               <img src="/assets/images/Advanced Laboratories.png" className="rounded-3xl shadow-lg translate-y-8 aspect-square object-cover" alt="Computing Lab" />
              </div>
           </div>
         </div>

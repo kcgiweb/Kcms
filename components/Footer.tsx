@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         <div>
           <Link to="/">
             <img 
-              src="https://res.cloudinary.com/dwoh8qevy/image/upload/v1772447926/Logo-New-1024x222_etmqyk_qeqbhi.webp" 
+              src="/assets/images/LOGO.webp" 
               alt="KCMS Official Logo" 
               className="h-10 w-auto mb-6 brightness-0 invert" 
             />

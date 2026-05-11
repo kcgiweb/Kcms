@@ -14,12 +14,12 @@ const StudentLife: React.FC = () => {
   ];
 
   const lifeGallery = [
-    { url: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767690014/download_5_v1xovv.png', label: 'Main Auditorium Events' },
-    { url: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767689980/download_4_gfxni9.png', label: 'Collaborative Study' },
-    { url: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767693347/download_13_pobgl1.png', label: 'Hostel Life' },
-    { url: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767690221/download_10_yezsn9.png', label: 'Sports Excellence' },
-    { url: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767690141/download_8_f7gppy.png', label: 'Interactive Learning' },
-    { url: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767690271/download_11_mu2xxp.png', label: 'Tech Innovation' },
+    { url: '/assets/images/download_5_v1xovv_l6ye3g.png', label: 'Main Auditorium Events' },
+    { url: '/assets/images/SLA_9058_y5xdri.jpg', label: 'Collaborative Study' },
+    { url: '/assets/images/Separate Hostels.png', label: 'Hostel Life' },
+    { url: '/assets/images/Sports & Fitness.webp', label: 'Sports Excellence' },
+    { url: '/assets/images/download_8_f7gppy_woi5xe.png', label: 'Interactive Learning' },
+    { url: '/assets/images/download_9_kbciqq_dc4kll.png', label: 'Tech Innovation' },
   ];
 
   return (
@@ -33,7 +33,7 @@ const StudentLife: React.FC = () => {
       <section className="relative h-[500px] flex items-center overflow-hidden bg-primary">
         <div className="absolute inset-0">
           <img 
-            src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767690324/download_12_pvx4jx.png" 
+            src="/assets/images/download_5_v1xovv_l6ye3g.png" 
             className="w-full h-full object-cover opacity-40 transition-all duration-1000" 
             alt="Vibrant Student Campus Life"
           />
@@ -70,7 +70,7 @@ const StudentLife: React.FC = () => {
           </div>
           <div className="relative group overflow-hidden rounded-[3rem] shadow-2xl aspect-video">
             <img 
-              src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767690221/download_10_yezsn9.png" 
+              src="/assets/images/SLA_8998_yygnwc.jpg" 
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
               alt="KCMS Sports and Outdoor Activities"
             />

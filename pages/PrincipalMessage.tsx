@@ -7,49 +7,58 @@ const PrincipalMessage: React.FC = () => {
 
   return (
     <div className="pt-24 min-h-screen bg-white">
-      {/* 1. Hero Section */}
-      <section className="bg-primary text-white py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://res.cloudinary.com/dejcpd56d/image/upload/v1767690141/download_8_f7gppy.png')] bg-cover bg-center"></div>
-        <div className="container mx-auto px-6 relative z-10 animate-fade-up">
-          <nav className="flex items-center gap-2 text-white/50 text-xs mb-8 uppercase font-black tracking-widest">
-            <Link to="/" className="hover:text-secondary transition-colors">Home</Link> 
+      {/* 1. Hero Banner */}
+      <section className="bg-primary text-white py-20 relative">
+        <div className="absolute inset-0 opacity-10 bg-[url('/assets/images/SLA_9006_itrogh.jpg')] bg-cover bg-center"></div>
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <nav className="flex items-center justify-center gap-2 text-white/50 text-xs mb-6 uppercase font-bold tracking-widest">
+            <Link to="/" className="hover:text-secondary">Home</Link> 
             <ChevronRight size={14} /> 
-            <Link to="/p/leadership" className="hover:text-secondary">Leadership</Link>
-            <ChevronRight size={14} />
-            <span className="text-white opacity-100">Principal's Message</span>
+            <span className="text-white">Principal's Message</span>
           </nav>
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-2/3">
-              <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">Leadership Through <br/><span className="text-secondary">Academic Excellence</span></h1>
-              <p className="text-xl text-white/70 max-w-2xl leading-relaxed">A message from Mohammed Noor Ahmed, the guiding force behind KCMS's academic success and institutional growth.</p>
-            </div>
-            <div className="md:w-1/3 text-center">
-              <div className="relative inline-block">
-                <div className="absolute inset-0 bg-secondary/20 rounded-full blur-3xl"></div>
-                <img 
-                  src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767688052/IMG_4453-1152x1536_v0b6my.webp" 
-                  alt="Principal Mohammed Noor Ahmed" 
-                  className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-[3rem] border-8 border-white/10 shadow-2xl relative z-10"
-                />
-              </div>
-            </div>
-          </div>
+          <h1 className="text-4xl md:text-6xl font-black mb-4">Principal's Message</h1>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto">Welcome to the Karnataka College of Management & Science.</p>
         </div>
       </section>
 
-      {/* 2. The Welcome Note */}
-      <section className="py-32 container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="relative mb-16 animate-fade-up">
-            <Quote size={120} className="text-primary/5 absolute -top-12 -left-12" />
-            <h2 className="text-3xl md:text-4xl font-black text-primary mb-8 relative z-10">Welcome to the Hub of Innovation</h2>
-            <div className="space-y-6 text-lg text-neutralText leading-loose text-justify relative z-10">
-              <p>
-                As the Principal of Karnataka College of Management & Science (KCMS), it is my distinct pleasure to welcome you to our academic community. We stand at a pivotal moment in history where technology and management are converging at an unprecedented pace. Our institution is not just a place of learning; it is an ecosystem designed to prepare you for this dynamic reality.
-              </p>
-              <p>
-                Our philosophy is simple: we believe that every student possesses a unique spark of genius. Our role as educators is to provide the environment, the tools, and the mentorship required to fan that spark into a flame of professional brilliance. We blend the traditional values of discipline and integrity with the modern requirements of agility and technical proficiency.
-              </p>
+      {/* 2. Message Section */}
+      <section className="py-20 container mx-auto px-6">
+        <div className="flex flex-col lg:flex-row gap-12 md:gap-20">
+          {/* Left: Principal Info */}
+          <div className="lg:w-1/3">
+            <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+              <img 
+                src="/assets/images/IMG_4453-1152x1536_v0b6my_xvgjru.webp" 
+                alt="Dr. Mohd. Noor Ahmed" 
+                className="w-full aspect-[4/5] object-cover"
+              />
+              <div className="p-8 text-center">
+                <h2 className="text-2xl font-black text-primary mb-1">Dr. Mohd. Noor Ahmed</h2>
+                <p className="text-secondary font-bold uppercase tracking-widest text-xs mb-4">Ph.D., Principal</p>
+                <div className="w-12 h-1 bg-secondary mx-auto"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: The Message */}
+          <div className="lg:w-2/3">
+            <div className="relative">
+              <Quote size={80} className="text-primary/5 absolute -top-8 -left-8" />
+              <h3 className="text-3xl font-black text-primary mb-8 relative z-10 leading-tight">Empowering the Next Generation of Leaders</h3>
+              <div className="space-y-6 text-lg text-neutralText leading-relaxed text-justify">
+                <p>
+                  As the Principal of Karnataka College of Management & Science (KCMS), it is my distinct pleasure to welcome you to our academic community. We stand at a pivotal moment in history where technology and management are converging at an unprecedented pace.
+                </p>
+                <p>
+                  Our institution is not just a place of learning; it is an ecosystem designed to prepare you for this dynamic reality. We believe that every student possesses a unique spark of genius, and our role as educators is to provide the environment, tools, and mentorship required to fan that spark into a flame of professional brilliance.
+                </p>
+                <p>
+                  We blend the traditional values of discipline and integrity with the modern requirements of agility and technical proficiency. At KCMS, we encourage our students to question, to research, and to innovate. Our faculty members are not just teachers; they are active researchers and industry consultants who bring the latest market trends directly to the classroom.
+                </p>
+                <p>
+                  I invite you to join us on this journey of discovery and excellence.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -83,7 +92,7 @@ const PrincipalMessage: React.FC = () => {
         <div className="flex flex-col lg:flex-row items-center gap-20">
           <div className="lg:w-1/2">
             <img 
-              src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767690141/download_8_f7gppy.png" 
+              src="/assets/images/download_8_f7gppy_woi5xe.png" 
               className="rounded-[4rem] shadow-2xl w-full aspect-video object-cover" 
               alt="KCMS Interactive Smart Classrooms" 
             />

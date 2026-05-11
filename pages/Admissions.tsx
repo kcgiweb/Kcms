@@ -66,7 +66,7 @@ const Admissions: React.FC = () => {
       />
       {/* 1. Hero Section */}
       <section className="bg-primary text-white py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div className="absolute inset-0 opacity-10 bg-[url('/assets/images/SLA_8735_uksvsy.jpg')] bg-cover bg-center"></div>
         <div className="container mx-auto px-6 relative z-10 animate-fade-up">
           <nav className="flex items-center gap-2 text-white/50 text-xs mb-8 uppercase font-black tracking-widest">
             <Link to="/" className="hover:text-secondary">Home</Link> 
@@ -80,23 +80,28 @@ const Admissions: React.FC = () => {
 
       {/* 2. Admissions Overview */}
       <section className="py-24 container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div className="animate-fade-up">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+          <div className="lg:w-5/12 animate-fade-up">
             <h2 className="text-primary text-xs font-black uppercase tracking-widest mb-6">Apply for College in Bangalore</h2>
-            <h3 className="text-4xl font-black text-primary mb-8 leading-tight">Join the Best College in Bangalore</h3>
+            <h3 className="text-4xl md:text-5xl font-black text-primary mb-8 leading-tight">Join the Best College in Bangalore</h3>
             <p className="text-lg text-neutralText leading-relaxed mb-10 text-justify">
               Admissions at KCMS Bangalore are designed to identify potential and ambition. As the top college in Bangalore South, we offer a seamless application process for the 2026-27 academic session. Whether you seek a BCA, BBA, or B.Com, our doors are open to merit.
             </p>
-            <div className="flex gap-6">
-               <Link to="/apply" className="bg-primary text-white px-10 py-4 rounded-full font-black hover:bg-secondary transition-all shadow-xl">Start Online Admission</Link>
-               <Link to="/contact" className="bg-gray-100 text-primary px-10 py-4 rounded-full font-black hover:bg-gray-200 transition-all">Visit Campus Near Me</Link>
+            <div className="flex flex-col sm:flex-row gap-6">
+               <Link to="/apply" className="bg-primary text-white px-10 py-4 rounded-full font-black hover:bg-secondary transition-all shadow-xl text-center">Start Online Admission</Link>
+               <Link to="/contact" className="bg-gray-100 text-primary px-10 py-4 rounded-full font-black hover:bg-gray-200 transition-all text-center">Visit Campus Near Me</Link>
             </div>
           </div>
-          <div className="relative group">
-             <img src="https://images.unsplash.com/photo-1523050335102-c6744729ea24?auto=format&fit=crop&q=80" className="rounded-[4rem] shadow-2xl transition-transform duration-700 group-hover:scale-105" alt="Admission 2026 Bangalore" />
-             <div className="absolute -bottom-10 -left-10 bg-secondary p-10 rounded-[3rem] text-white shadow-2xl hidden md:block">
-                <div className="text-4xl font-black mb-1">95%</div>
-                <div className="text-xs font-bold uppercase tracking-widest">Placement Rate</div>
+          <div className="lg:w-7/12 relative group w-full">
+             <div className="absolute -inset-4 bg-secondary/5 rounded-[4rem] -rotate-2 group-hover:rotate-0 transition-transform duration-700"></div>
+             <img 
+               src="/assets/images/homeabout.jpg" 
+               className="rounded-[3rem] shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] w-full aspect-[16/10] object-cover relative z-10" 
+               alt="Admission 2026 Bangalore" 
+             />
+             <div className="absolute -bottom-6 -left-6 bg-secondary p-8 md:p-12 rounded-[2.5rem] text-white shadow-2xl z-20 animate-bounce-subtle">
+                <div className="text-4xl md:text-6xl font-black mb-1">95%</div>
+                <div className="text-xs md:text-sm font-bold uppercase tracking-widest opacity-80">Placement Rate</div>
              </div>
           </div>
         </div>

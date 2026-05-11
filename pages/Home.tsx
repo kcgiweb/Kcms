@@ -27,11 +27,12 @@ const Home: React.FC = () => {
   ];
 
   const galleryImages = [
-    'https://res.cloudinary.com/dwoh8qevy/image/upload/v1772447924/download_11_mu2xxp_acj9v7.png',
-    'https://res.cloudinary.com/dwoh8qevy/image/upload/v1772447925/download_9_kbciqq_dc4kll.png',
-    'https://res.cloudinary.com/dwoh8qevy/image/upload/v1772447925/download_8_f7gppy_woi5xe.png',
-    'https://res.cloudinary.com/dwoh8qevy/image/upload/v1772447924/download_12_pvx4jx_vle22h.png',
-    'https://res.cloudinary.com/dwoh8qevy/image/upload/v1769756914/kcmss_nh06dd.png',
+    '/assets/images/SLA_8705_ccmafe.jpg',
+    '/assets/images/SLA_8735_uksvsy.jpg',
+    '/assets/images/SLA_8834_yhvcvo.jpg',
+    '/assets/images/SLA_8937_kxomhs.jpg',
+    '/assets/images/SLA_8998_yygnwc.jpg',
+    '/assets/images/SLA_8999_m4te5x.jpg',
   ];
 
   useEffect(() => {
@@ -66,7 +67,7 @@ const Home: React.FC = () => {
             className="w-full h-full object-cover"
           >
             <source 
-              src="https://res.cloudinary.com/dwoh8qevy/video/upload/v1772447579/Welcome-to-Karnataka-College-Group-of-Institutions-_-Where-Education-Meets-Excellence_riipez_lvqzli.mp4" 
+              src="/assets/videos/herosection.mp4" 
               type="video/mp4" 
             />
           </video>
@@ -126,7 +127,7 @@ const Home: React.FC = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 >
                   <source 
-                    src="https://res.cloudinary.com/dwoh8qevy/video/upload/v1772935228/248098587_463720151629122_4038737721342805380_n_alfksc_fmfui4.mp4" 
+                    src="/assets/videos/Welcome-to-Karnataka-College-Group-of-Institutions-_-Where-Education-Meets-Excellence_riipez_lvqzli.mp4" 
                     type="video/mp4" 
                   />
                 </video>
@@ -202,9 +203,9 @@ const Home: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
-              { title: 'Modern Digital Library', img: 'https://res.cloudinary.com/dwoh8qevy/image/upload/v1772447925/download_5_v1xovv_l6ye3g.png', icon: <Library /> },
-              { title: 'High-Tech IT Labs', img: 'https://res.cloudinary.com/dwoh8qevy/image/upload/v1772447924/download_11_mu2xxp_acj9v7.png', icon: <Monitor /> },
-              { title: 'Smart Classrooms', img: 'https://res.cloudinary.com/dwoh8qevy/image/upload/v1772447925/download_8_f7gppy_woi5xe.png', icon: <GraduationCap /> }
+              { title: 'Modern Digital Library', img: '/assets/images/Central Library.webp', icon: <Library /> },
+              { title: 'High-Tech IT Labs', img: '/assets/images/Advanced Laboratories.png', icon: <Monitor /> },
+              { title: 'Smart Classrooms', img: '/assets/images/download_8_f7gppy_woi5xe.png', icon: <GraduationCap /> }
             ].map((facility, i) => (
               <div key={i} className="group relative h-[350px] md:h-[450px] rounded-2xl md:rounded-[3rem] overflow-hidden shadow-xl hover:shadow-2xl transition-all">
                 <img src={facility.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={facility.title} />
@@ -250,7 +251,7 @@ const Home: React.FC = () => {
                     <div key={i} className="min-w-[120px] md:min-w-[180px] h-20 md:h-28 bg-white p-4 md:p-8 rounded-xl md:rounded-2xl flex items-center justify-center shadow-md border border-gray-100 transition-all hover:scale-105 shrink-0">
                       <img 
                         src={logo.url} 
-                        className="max-h-10 md:max-h-14 w-auto object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all" 
+                        className="max-h-10 md:max-h-14 w-auto object-contain hover:scale-110 transition-all" 
                         alt={logo.name + ' Recruitment partner KCMS'} 
                       />
                     </div>

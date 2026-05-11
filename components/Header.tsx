@@ -49,7 +49,7 @@ const Header: React.FC = () => {
           {/* Official Logo */}
           <Link to="/" className="flex items-center group shrink-0">
             <img 
-              src="https://res.cloudinary.com/dwoh8qevy/image/upload/v1772447926/Logo-New-1024x222_etmqyk_qeqbhi.webp" 
+              src="/assets/images/LOGO.webp" 
               alt="KCMS Logo" 
               className="h-10 lg:h-12 w-auto object-contain transition-all duration-500"
             />
@@ -135,7 +135,7 @@ const Header: React.FC = () => {
           <div className="p-4 border-b border-gray-100 flex justify-between items-center">
             <Link to="/" onClick={() => setIsOpen(false)}>
               <img 
-                src="https://res.cloudinary.com/dejcpd56d/image/upload/v1765439468/Logo-New-1024x222_etmqyk.webp" 
+                src="/assets/images/LOGO.webp" 
                 alt="KCMS Logo" 
                 className="h-9 w-auto"
               />

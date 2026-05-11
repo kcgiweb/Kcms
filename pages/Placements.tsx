@@ -96,7 +96,7 @@ const Placements: React.FC = () => {
       />
       {/* 1. Hero Section */}
       <section className="bg-primary text-white py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div className="absolute inset-0 opacity-10 bg-[url('/assets/images/SLA_8705_ccmafe.jpg')] bg-cover bg-center"></div>
         <div className="container mx-auto px-6 relative z-10 animate-fade-up">
           <nav className="flex items-center gap-2 text-white/50 text-xs mb-8 uppercase font-black tracking-widest">
             <Link to="/" className="hover:text-secondary">Home</Link> 
@@ -126,7 +126,7 @@ const Placements: React.FC = () => {
             </div>
           </div>
           <div className="relative group">
-            <img src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767690216/download_10_vssrg5.png" className="rounded-[4rem] shadow-2xl relative z-10 w-full object-cover aspect-video lg:aspect-square" alt="KCMS Administrative Block" />
+            <img src="/assets/images/download_6_ealo4h_ashvpy.png" className="rounded-[4rem] shadow-2xl relative z-10 w-full object-cover aspect-video lg:aspect-square" alt="KCMS Career Excellence" />
             <div className="absolute -bottom-10 -left-10 bg-secondary p-12 rounded-[3rem] text-white shadow-2xl hidden md:block z-20">
               <Handshake size={48} />
               <div className="text-3xl font-black mt-4">500+</div>
@@ -217,7 +217,7 @@ const Placements: React.FC = () => {
                   <img 
                     src={logo.url} 
                     alt={logo.name} 
-                    className="max-h-12 md:max-h-16 w-auto object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all" 
+                    className="max-h-12 md:max-h-16 w-auto object-contain opacity-100 transition-all" 
                   />
                 </div>
              ))}
@@ -247,7 +247,7 @@ const Placements: React.FC = () => {
              </div>
           </div>
           <div className="lg:w-1/3">
-             <img src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767690271/download_11_mu2xxp.png" className="rounded-[3rem] shadow-xl aspect-square object-cover" alt="Real KCMS Lab Environment" />
+             <img src="/assets/images/download_8_f7gppy_woi5xe.png" className="rounded-[3rem] shadow-xl aspect-square object-cover" alt="Real KCMS Lab Environment" />
           </div>
         </div>
       </section>
