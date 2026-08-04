@@ -36,7 +36,7 @@ import GenericPage from './pages/GenericPage';
 import AictePage from './pages/AictePage';
 import Apply from './pages/Apply';
 import AdminDashboard from './pages/AdminDashboard';
-import ApplyPopup from './components/ApplyPopup';
+import ApplyPopup, { openNpfPopup } from './components/ApplyPopup';
 import { MessageSquare, ChevronUp } from 'lucide-react';
 import InstallPrompt from './components/InstallPrompt';
 import { useLocation } from 'react-router-dom';
@@ -127,12 +127,14 @@ const AppContent: React.FC = () => {
       {/* Floating Action Buttons */}
       {!isAdminPage && (
         <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-3">
-          <Link 
-            to="/apply"
-            className="w-12 h-12 bg-secondary text-white rounded-full shadow-2xl flex items-center justify-center transition-all hover:bg-primary"
+          <button 
+            type="button"
+            onClick={openNpfPopup}
+            className="w-12 h-12 bg-secondary text-white rounded-full shadow-2xl flex items-center justify-center transition-all hover:bg-primary cursor-pointer"
+            title="Enquire Now"
           >
             <MessageSquare size={24} />
-          </Link>
+          </button>
           
           {showScrollTop && (
             <button 

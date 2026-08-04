@@ -37,7 +37,7 @@ const Header: React.FC = () => {
             <span className="flex items-center gap-2"><Mail size={14} className={showSolidHeader ? 'text-secondary' : 'text-white'} /> admissions@kcms.edu.in</span>
           </div>
           <div className="flex gap-6">
-            <Link to="/apply" className="hover:text-secondary transition-colors font-medium">Apply Now</Link>
+            <a href="https://admissions.kcgiedu.org/" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors font-medium">Apply Now</a>
             <Link to="/contact" className="hover:text-secondary transition-colors font-medium">Contact Us</Link>
           </div>
         </div>
@@ -114,12 +114,14 @@ const Header: React.FC = () => {
                 )}
               </div>
             ))}
-            <Link 
-              to="/apply"
+            <a 
+              href="https://admissions.kcgiedu.org/"
+              target="_blank"
+              rel="noopener noreferrer"
               className={`ml-4 px-6 py-2 rounded-full font-bold transition-all shadow-lg flex items-center gap-2 text-sm ${showSolidHeader ? 'bg-secondary text-white hover:bg-primary' : 'bg-white text-primary hover:bg-secondary hover:text-white'}`}
             >
               Apply <span className="hidden xl:inline">Online</span> <ArrowRight size={16} />
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Toggle */}
@@ -193,13 +195,15 @@ const Header: React.FC = () => {
           </div>
 
           <div className="p-4 bg-gray-50 border-t border-gray-100">
-            <Link 
-              to="/apply"
+            <a 
+              href="https://admissions.kcgiedu.org/"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
               className="w-full bg-primary text-white py-3 rounded-lg font-bold flex items-center justify-center gap-2 text-sm"
             >
               Start Admission Process <ArrowRight size={18} />
-            </Link>
+            </a>
           </div>
         </div>
       </div>

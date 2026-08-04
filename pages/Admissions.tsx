@@ -6,6 +6,7 @@ import {
   Award, BookOpen, Clock, Users, ChevronDown, CheckCircle, Mail, Plus, Minus
 } from 'lucide-react';
 import SEO from '../components/SEO';
+import NpfEmbed from '../components/NpfEmbed';
 
 const Admissions: React.FC = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
@@ -263,9 +264,27 @@ const Admissions: React.FC = () => {
                      <p className="text-sm text-neutralText/60">Guidance for Post-Matric and Minority Scholarships.</p>
                   </div>
                </div>
-               <button className="w-full bg-secondary text-white py-4 rounded-2xl font-black shadow-xl hover:bg-primary transition-all">Check Scholarship Eligibility</button>
+               <button 
+                  type="button" 
+                  className="npfWidgetButton npfWidget-91d4384119c7df02dd58b03283ed6f37 w-full bg-secondary text-white py-4 rounded-2xl font-black shadow-xl hover:bg-primary transition-all"
+                >
+                  Check Scholarship Eligibility
+                </button>
             </div>
          </div>
+      </section>
+
+      {/* Embedded Online Enquiry Form */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <div className="bg-white shadow-2xl rounded-[3rem] p-8 md:p-12 border border-gray-100">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-black text-primary mb-2">Instant Admission Enquiry 2026</h3>
+              <p className="text-neutralText/60 text-sm">Submit the form below for immediate counselor callback and fee structure details.</p>
+            </div>
+            <NpfEmbed height="520px" />
+          </div>
+        </div>
       </section>
 
       {/* Final CTA */}

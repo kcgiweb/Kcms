@@ -1,172 +1,130 @@
 import React, { useState, useEffect } from 'react';
-import { X, Send, Loader2 } from 'lucide-react';
+import { MessageSquare, X, Loader2, Sparkles, GraduationCap } from 'lucide-react';
+
+const WIDGET_ID = '91d4384119c7df02dd58b03283ed6f37';
+const IFRAME_SRC = `https://widgets.in4.nopaperforms.com/register?&r=&q=&w=${WIDGET_ID}&m=&cu=`;
+
+export const openNpfPopup = () => {
+  window.dispatchEvent(new CustomEvent('open-apply-modal'));
+};
+
+export const closeNpfPopup = () => {
+  window.dispatchEvent(new CustomEvent('close-apply-modal'));
+};
 
 const ApplyPopup: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    mobile: '',
-    course: ''
-  });
+  const [isOpen, setIsOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 15000); 
-    const handleOpen = () => setIsVisible(true);
+    const handleOpen = () => setIsOpen(true);
+    const handleClose = () => setIsOpen(false);
+
     window.addEventListener('open-apply-modal', handleOpen);
+    window.addEventListener('close-apply-modal', handleClose);
+
+    // Global click listener for any elements with NPF widget classes
+    const handleDocClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest(`.npfWidget-${WIDGET_ID}, .npfWidgetButton`);
+      if (target) {
+        e.preventDefault();
+        setIsOpen(true);
+      }
+    };
+    document.addEventListener('click', handleDocClick);
+
+    // Auto-popup after 2.5 seconds on page load
+    const autoTimer = setTimeout(() => {
+      setIsOpen(true);
+    }, 2500);
+
     return () => {
-      clearTimeout(timer);
       window.removeEventListener('open-apply-modal', handleOpen);
+      window.removeEventListener('close-apply-modal', handleClose);
+      document.removeEventListener('click', handleDocClick);
+      clearTimeout(autoTimer);
     };
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setStatus('idle');
-
-    // Updated Formspree ID as per latest request
-    const FORMSPREE_ID = 'xbdlvbgg';
-
-    try {
-      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          ...formData,
-          _subject: `KCMS ADMISSION LEAD: ${formData.firstName} ${formData.lastName}`,
-          source: 'Main Admission Popup',
-          destination_email: 'rukeshbabug@gmail.com'
-        }),
-      });
-
-      if (response.ok) {
-        setStatus('success');
-        setFormData({ firstName: '', lastName: '', email: '', mobile: '', course: '' });
-        setTimeout(() => {
-          setIsVisible(false);
-          setStatus('idle');
-        }, 3000);
-      } else {
-        throw new Error('Submission failed');
-      }
-    } catch (error) {
-      // Graceful fallback
-      setStatus('success');
-      setTimeout(() => {
-        setIsVisible(false);
-        setStatus('idle');
-      }, 3000);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  if (!isVisible) return null;
-
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
-      <div className="bg-white rounded-2xl overflow-hidden shadow-2xl w-full max-w-md relative animate-fade-up">
-        <button 
-          onClick={() => setIsVisible(false)}
-          className="absolute top-3 right-3 text-neutralText/40 hover:text-primary transition-colors p-2"
+    <>
+      {/* Floating Enquire Now Button on Right Side */}
+      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-40">
+        <button
+          type="button"
+          onClick={() => setIsOpen(true)}
+          className="bg-secondary hover:bg-primary text-white font-black text-xs uppercase tracking-widest px-3.5 py-4 rounded-l-2xl shadow-2xl transition-all flex items-center gap-2 transform origin-right hover:-translate-x-1 cursor-pointer border-y border-l border-white/20"
+          style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
+          title="Admission Enquiry 2026-27"
         >
-          <X size={24} />
+          <MessageSquare size={16} className="rotate-90 inline text-white" />
+          Enquire Now
         </button>
-
-        <div className="bg-primary p-8 text-white text-center">
-          <h2 className="text-2xl font-black mb-1">Join KCMS Today</h2>
-          <p className="text-white/60 text-sm">Admission process for 2026-27 is now live.</p>
-        </div>
-
-        {status === 'success' ? (
-          <div className="p-10 text-center animate-fade-up">
-            <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Send size={32} />
-            </div>
-            <h3 className="text-xl font-black text-primary mb-2">Enquiry Received</h3>
-            <p className="text-neutralText/60 text-sm">Our admission counselor will contact you shortly at {formData.mobile || 'your provided number'}.</p>
-          </div>
-        ) : (
-          <form className="p-8 space-y-4" onSubmit={handleSubmit}>
-            <div className="grid grid-cols-2 gap-4">
-              <input 
-                name="firstName"
-                type="text" 
-                placeholder="First Name" 
-                required 
-                value={formData.firstName}
-                onChange={(e) => setFormData({...formData, firstName: e.target.value})}
-                className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-100 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-medium text-sm" 
-              />
-              <input 
-                name="lastName"
-                type="text" 
-                placeholder="Last Name" 
-                required 
-                value={formData.lastName}
-                onChange={(e) => setFormData({...formData, lastName: e.target.value})}
-                className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-100 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-medium text-sm" 
-              />
-            </div>
-            <input 
-              name="email"
-              type="email" 
-              placeholder="Email Address" 
-              required 
-              value={formData.email}
-              onChange={(e) => setFormData({...formData, email: e.target.value})}
-              className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-100 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-medium text-sm" 
-            />
-            <input 
-              name="mobile"
-              type="tel" 
-              placeholder="Mobile Number" 
-              required 
-              value={formData.mobile}
-              onChange={(e) => setFormData({...formData, mobile: e.target.value})}
-              className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-100 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-medium text-sm" 
-            />
-            <select 
-              name="course"
-              required 
-              value={formData.course}
-              onChange={(e) => setFormData({...formData, course: e.target.value})}
-              className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-100 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-medium appearance-none text-sm"
-            >
-              <option value="">Choose Course</option>
-              <option>BBA – Aviation Management</option>
-              <option>BCA</option>
-              <option>BCA (AI & ML)</option>
-              <option>BSc – Criminology and Forensic Science</option>
-              <option>BTTM</option>
-              <option>M.Com</option>
-              <option>MTTM</option>
-            </select>
-            
-            <button 
-              type="submit" 
-              disabled={isSubmitting}
-              className="w-full bg-secondary text-white py-3 rounded-lg font-black text-base flex items-center justify-center gap-3 hover:bg-primary transition-all group shadow-lg hover:shadow-primary/20 disabled:opacity-50"
-            >
-              {isSubmitting ? (
-                <>Sending... <Loader2 className="animate-spin" /></>
-              ) : (
-                <>Apply Now <Send size={18} className="group-hover:translate-x-1 transition-transform" /></>
-              )}
-            </button>
-            <p className="text-[10px] text-center text-neutralText/30 uppercase tracking-widest">Details will be sent to Admissions Office</p>
-          </form>
-        )}
       </div>
-    </div>
+
+      {/* Modern React Modal with Preloaded / Instant Iframe */}
+      {isOpen && (
+        <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+          {/* Backdrop Blur */}
+          <div
+            className="fixed inset-0 bg-black/65 backdrop-blur-md transition-opacity animate-fade-in"
+            onClick={() => setIsOpen(false)}
+          />
+
+          {/* Modal Container */}
+          <div className="relative w-full max-w-lg bg-white rounded-[2rem] shadow-2xl border-t-8 border-primary overflow-hidden z-10 animate-zoom-in my-auto max-h-[94vh] flex flex-col">
+            {/* Modal Header */}
+            <div className="flex items-center justify-between px-6 pt-5 pb-3 border-b border-gray-100 bg-gradient-to-r from-gray-50 via-white to-orange-50/30 shrink-0">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                  <GraduationCap size={22} />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-lg font-black text-primary leading-none">Admissions 2026-27</h3>
+                    <span className="bg-secondary/15 text-secondary text-[10px] font-black uppercase px-2 py-0.5 rounded-full flex items-center gap-1">
+                      <Sparkles size={10} /> KCMS
+                    </span>
+                  </div>
+                  <p className="text-xs text-neutralText/70 font-medium mt-1">
+                    Apply for BCA, BBA, B.Com, MBA & MTTM
+                  </p>
+                </div>
+              </div>
+
+              {/* Close Button */}
+              <button
+                type="button"
+                onClick={() => setIsOpen(false)}
+                className="w-9 h-9 rounded-full bg-gray-100 hover:bg-red-50 hover:text-red-600 text-gray-500 flex items-center justify-center transition-all cursor-pointer shrink-0"
+                aria-label="Close form"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            {/* Modal Content / Iframe */}
+            <div className="relative p-2 sm:p-4 overflow-y-auto flex-1 bg-white" style={{ minHeight: '520px' }}>
+              {loading && (
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/95 z-20">
+                  <Loader2 className="w-10 h-10 text-primary animate-spin mb-3" />
+                  <span className="text-sm font-bold text-primary">Loading Enquiry Form...</span>
+                  <span className="text-xs text-neutralText/60 mt-1">Connecting to KCMS Admissions Desk</span>
+                </div>
+              )}
+              <iframe
+                src={IFRAME_SRC}
+                width="100%"
+                height="520px"
+                onLoad={() => setLoading(false)}
+                className="w-full border-none rounded-xl"
+                title="KCMS Admission Enquiry Form"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

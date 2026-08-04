@@ -121,6 +121,100 @@
     .animate-marquee-scroll:hover {
       animation-play-state: paused;
     }
+    /* Premium NoPaperForms Popup Styling */
+    @keyframes npfModalPop {
+      0% { opacity: 0; transform: scale(0.92) translateY(20px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    
+    #popup-91d4384119c7df02dd58b03283ed6f37 {
+      display: none;
+      position: fixed !important;
+      inset: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: 999999 !important;
+      overflow-y: auto !important;
+      padding: 16px !important;
+      box-sizing: border-box !important;
+    }
+
+    #popup-91d4384119c7df02dd58b03283ed6f37[style*="display: block"],
+    #popup-91d4384119c7df02dd58b03283ed6f37[style*="display:block"] {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    #popup-back-91d4384119c7df02dd58b03283ed6f37 {
+      background-color: rgba(15, 23, 42, 0.75) !important;
+      backdrop-filter: blur(8px) !important;
+      -webkit-backdrop-filter: blur(8px) !important;
+      position: fixed !important;
+      inset: 0 !important;
+      z-index: 1 !important;
+      cursor: pointer;
+    }
+
+    #popup-in-91d4384119c7df02dd58b03283ed6f37 {
+      background: #ffffff !important;
+      border: 1px solid rgba(106, 0, 48, 0.12) !important;
+      border-top: 5px solid #6A0030 !important;
+      width: 100% !important;
+      max-width: 540px !important;
+      margin: auto !important;
+      padding: 20px 24px 16px 24px !important;
+      border-radius: 24px !important;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(247, 150, 30, 0.2) !important;
+      position: relative !important;
+      z-index: 2 !important;
+      animation: npfModalPop 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+      box-sizing: border-box !important;
+    }
+
+    .npfTitle-91d4384119c7df02dd58b03283ed6f37 {
+      color: #6A0030 !important;
+      font-family: 'Inter', sans-serif !important;
+      font-size: 19px !important;
+      font-weight: 800 !important;
+      text-align: left !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding-bottom: 12px !important;
+      border-bottom: 1px solid #f0f0f0 !important;
+      margin-bottom: 12px !important;
+    }
+
+    #npfWdgclose-91d4384119c7df02dd58b03283ed6f37 {
+      float: none !important;
+      position: static !important;
+      width: 32px !important;
+      height: 32px !important;
+      padding: 6px !important;
+      border-radius: 50% !important;
+      background: #f3f4f6 !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+    }
+
+    #npfWdgclose-91d4384119c7df02dd58b03283ed6f37:hover {
+      background: #fee2e2 !important;
+      transform: scale(1.1) !important;
+    }
+
+    #popup-message-91d4384119c7df02dd58b03283ed6f37 {
+      max-height: calc(85vh - 80px) !important;
+      overflow-y: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      border-radius: 12px !important;
+    }
+
+    #popup-message-91d4384119c7df02dd58b03283ed6f37 iframe {
+      width: 100% !important;
+      border: none !important;
+      border-radius: 12px !important;
+    }
   </style>
 <script type="importmap">
 {
@@ -143,6 +237,7 @@
   <!-- End Google Tag Manager (noscript) -->
   <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
+  <!-- NoPaperForms Official Lead Tracking Script -->
   <script type="text/javascript">
     var npf_d='https://kcms.in4.nopaperforms.com';
     var npf_c='7172';

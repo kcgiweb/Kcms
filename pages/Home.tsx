@@ -80,12 +80,14 @@ const Home: React.FC = () => {
             Join Bangalore's premier institution for Management & Science. Admissions for the 2026-27 session are now open.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:justify-start">
-            <Link 
-              to="/apply"
+            <a 
+              href="https://admissions.kcgiedu.org/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-secondary text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-white hover:text-primary transition-all shadow-2xl flex items-center gap-3"
             >
               Apply Now <ArrowRight size={20} />
-            </Link>
+            </a>
             <Link 
               to="/courses" 
               className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-white hover:text-primary transition-all shadow-2xl"
@@ -310,12 +312,14 @@ const Home: React.FC = () => {
             ))}
           </div>
           <div className="mt-12 md:mt-20 text-center">
-            <Link 
-              to="/apply"
+            <a 
+              href="https://admissions.kcgiedu.org/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block w-full md:w-auto bg-white text-primary px-8 md:px-12 py-4 md:py-5 rounded-full font-black text-base md:text-lg hover:bg-secondary hover:text-white transition-all shadow-2xl"
             >
               Start Your Application for KCMS
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -351,12 +355,14 @@ const Home: React.FC = () => {
       <section className="py-10 md:py-16 bg-secondary mb-16 lg:mb-0">
         <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 text-white">
           <h2 className="text-xl md:text-3xl font-black text-center md:text-left">Apply for Management & Science Admissions Bangalore 2026</h2>
-          <Link 
-            to="/apply"
+          <a 
+            href="https://admissions.kcgiedu.org/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full md:w-auto bg-primary text-white px-8 md:px-10 py-4 rounded-full font-black text-base md:text-lg hover:bg-white hover:text-primary transition-all shadow-2xl flex items-center justify-center gap-3"
           >
             Apply Online to KCMS <ArrowRight />
-          </Link>
+          </a>
         </div>
       </section>
     </div>
